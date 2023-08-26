@@ -7,7 +7,8 @@ import PageSideBar from "./GlobalComponents/PageSideBar/PageSideBar"
 import GMSSelectInput from "./GlobalComponents/GMSSelectInput/GMSSelectInput"
 import GMSFilter from "./GlobalComponents/GMSFilter/GMSFilter"
 import GuestListTable from "./GuestComponents/GuestListTable/GuestListTable"
-export {
+import TableInputEdit from "./GlobalComponents/TableInputEdit/TableInputEdit"
+ export {
     GMSButton,
     GMSInput,
     Calender,
@@ -16,5 +17,6 @@ export {
     PageSideBar,
     GMSSelectInput,
     GMSFilter,
-    GuestListTable
+    GuestListTable,
+    TableInputEdit
 }
