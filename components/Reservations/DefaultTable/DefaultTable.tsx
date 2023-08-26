@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import "../reservationStyles.css";
 
 const DefaultTable = () => {
   const headings = [
@@ -61,7 +62,7 @@ const DefaultTable = () => {
 
   return (
     <>
-      <div className="table w-full">
+      <div className="table w-full ">
         <div className="table-header-group">
           <div className="table-row px-5">
             {headings.map((heading, index) => (
