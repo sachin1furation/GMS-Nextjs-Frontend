@@ -1,9 +1,13 @@
-import Image from 'next/image'
+import DefaultTable from "@/components/Reservations/DefaultTable/DefaultTable";
+import GroupByTImeTable from "@/components/Reservations/GroupByTimeTable/GroupByTImeTable";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-   <p>hii</p>
+    <main>
+      <p>hii</p>
+      {/* <DefaultTable /> */}
+      <GroupByTImeTable />
     </main>
-  )
+  );
 }
