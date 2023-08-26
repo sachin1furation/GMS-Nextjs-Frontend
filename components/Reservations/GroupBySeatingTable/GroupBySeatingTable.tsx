@@ -1,5 +1,4 @@
 import React from "react";
-import "../reservationStyles.css";
 
 interface Data {
   covers: number;
@@ -13,9 +12,11 @@ interface Data {
   status: string;
   spend: number;
   time: string;
+  vip: boolean;
+  seating: string;
 }
 
-const GroupByTImeTable: React.FC = () => {
+const GroupBySeatingTable: React.FC = () => {
   const headings: string[] = [
     "time",
     "covers",
@@ -43,6 +44,8 @@ const GroupByTImeTable: React.FC = () => {
       created_date: "2023-08-25",
       status: "Confirmed",
       spend: 100,
+      vip: true,
+      seating: "Restaurant", // Added seating property
     },
     {
       time: "7:30",
@@ -56,6 +59,8 @@ const GroupByTImeTable: React.FC = () => {
       created_date: "2023-08-25",
       status: "Pending",
       spend: 0,
+      vip: true,
+      seating: "Bar", // Added seating property
     },
     {
       time: "8:30",
@@ -69,6 +74,8 @@ const GroupByTImeTable: React.FC = () => {
       created_date: "2023-08-25",
       status: "Pending",
       spend: 0,
+      vip: false,
+      seating: "Basement", // Added seating property
     },
     {
       time: "8:30",
@@ -82,55 +89,29 @@ const GroupByTImeTable: React.FC = () => {
       created_date: "2023-08-25",
       status: "Pending",
       spend: 0,
+      vip: false,
+      seating: "Bar", // Added seating property
     },
   ];
 
-  const groupedByTime: { [key: string]: Data[] } = data.reduce<{
+  const groupedBySeating: { [key: string]: Data[] } = data.reduce<{
     [key: string]: Data[];
   }>((groups, item) => {
-    const { time, ...rest } = item;
-    if (!groups[time]) {
-      groups[time] = [];
+    const { seating, ...rest } = item;
+    if (!groups[seating]) {
+      groups[seating] = [];
     }
 
-    const dataWithoutTime = {
+    const dataWithoutSeating = {
       ...rest,
     } as Data;
 
-    groups[time].push(dataWithoutTime);
+    groups[seating].push(dataWithoutSeating);
     return groups;
   }, {});
 
   return (
     <>
-      {/* <div className="table w-full">
-        <div className="table-header-group">
-          <div className="table-row px-5">
-            {headings.map((heading, index) => (
-              <div key={index} className="table-cell text-sm text-left py-3">
-                {heading.toUpperCase()}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="table-row-group">
-          {data.map((item, index) => (
-            <div
-              className={`table-row text-xs ${
-                index % 2 === 0 ? "odd-row" : "bg-white"
-              } `}
-              key={index}
-            >
-              {Object.values(item).map((value, innerIndex) => (
-                <div key={innerIndex} className="table-cell py-3">
-                  {value}
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div> */}
-
       <div className="w-full overflow-x-auto">
         <table className="min-w-full font-Lato font-semibold">
           <thead>
@@ -146,40 +127,42 @@ const GroupByTImeTable: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(groupedByTime).map((time) => {
-              const reservations = groupedByTime[time];
-              const noOfReservations = groupedByTime[time].length;
+            {Object.keys(groupedBySeating).map((seating) => {
+              const reservations = groupedBySeating[seating];
+              const noOfReservations = groupedBySeating[seating].length;
               const totalCovers = reservations.reduce(
                 (sum, item) => sum + item.covers,
                 0
               );
               return (
-                <React.Fragment key={time}>
+                <React.Fragment key={seating}>
                   <tr className="bg-gray-200">
                     <td
                       colSpan={headings.length}
                       className="px-6 py-3 text-xs font-semibold  group-heading"
                     >
-                      {`${time} (${noOfReservations} reservations) - ${totalCovers} covers`}
+                      {`${seating} (${noOfReservations} reservations) - ${totalCovers} covers`}
                     </td>
                   </tr>
-                  {groupedByTime[time].map((item, index) => (
-                    <tr key={index}>
-                      {Object.keys(item).map((key, innerIndex) => {
-                        if (key === "vip") {
-                          return null; // skip rendering this value
-                        }
-                        return (
-                          <td
-                            key={innerIndex}
-                            className="px-6 py-3 text-xs font-normal row-values"
-                          >
-                            {item[key as keyof Data]}
-                          </td>
-                        );
-                      })}
-                    </tr>
-                  ))}
+                  {groupedBySeating[seating].map((item, index) => {
+                    return (
+                      <tr key={index}>
+                        {Object.keys(item).map((key, innerIndex) => {
+                          if (key === "vip") {
+                            return null; // skip rendering this value
+                          }
+                          return (
+                            <td
+                              key={innerIndex}
+                              className="px-6 py-3 text-xs font-normal row-values"
+                            >
+                              {item[key as keyof Data]}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
                 </React.Fragment>
               );
             })}
@@ -190,4 +173,4 @@ const GroupByTImeTable: React.FC = () => {
   );
 };
 
-export default GroupByTImeTable;
+export default GroupBySeatingTable;
