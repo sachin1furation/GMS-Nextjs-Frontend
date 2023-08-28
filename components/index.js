@@ -1,3 +1,6 @@
+ 
+ import GMSDropDown from "./GlobalComponents/GMSDropDown/GMSDropDown"
+import GMSDatePicker from  "./GlobalComponents/GMSDatePicker/GMSDatePicker"
 import GMSButton from "./GlobalComponents/GMSButton/GMSButton";
 import GMSInput from "./GlobalComponents/GMSInput/GMSInput";
 import Calender from "./GlobalComponents/Calender/Calender";
@@ -22,4 +25,7 @@ export {
   GuestListTable,
   TableInputEdit,
   AddReservation,
+  GMSDropDown,
+    GMSDatePicker
 };
+ 

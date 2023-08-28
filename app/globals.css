@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+ .bg-primary {
+  background-color: #3A36DB;
+}
+
+.text-primary {
+  color: #7C4EF1;
+}
 
 
 
