@@ -112,14 +112,14 @@ const GroupBySeatingTable: React.FC = () => {
 
   return (
     <>
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-auto" style={{ maxHeight: "80vh", overflowY: "auto" }}>
         <table className="min-w-full font-Lato font-semibold">
           <thead>
             <tr>
               {headings.map((heading, index) => (
                 <th
                   key={index}
-                  className="px-6 py-5 text-left text-xs font-medium uppercase tracking-wider table-heading"
+                  className="px-6 py-5 text-left text-sm font-semibold uppercase tracking-wider table-heading"
                 >
                   {heading}
                 </th>

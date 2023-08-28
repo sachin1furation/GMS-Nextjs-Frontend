@@ -8,6 +8,8 @@ import GMSSelectInput from "./GlobalComponents/GMSSelectInput/GMSSelectInput"
 import GMSFilter from "./GlobalComponents/GMSFilter/GMSFilter"
 import GuestListTable from "./GuestComponents/GuestListTable/GuestListTable"
 import TableInputEdit from "./GlobalComponents/TableInputEdit/TableInputEdit"
+import GMSDropDown from "./GlobalComponents/GMSDropDown/GMSDropDown"
+import GMSDatePicker from  "./GlobalComponents/GMSDatePicker/GMSDatePicker"
  export {
     GMSButton,
     GMSInput,
@@ -18,5 +20,7 @@ import TableInputEdit from "./GlobalComponents/TableInputEdit/TableInputEdit"
     GMSSelectInput,
     GMSFilter,
     GuestListTable,
-    TableInputEdit
+    TableInputEdit,
+    GMSDropDown,
+    GMSDatePicker
 }

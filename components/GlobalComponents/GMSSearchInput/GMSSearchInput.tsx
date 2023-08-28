@@ -9,7 +9,7 @@ const GMSSearchInput = () => {
       </div>
       <input
         type="text"
-        className="pl-10 w-full px-4 py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+        className="pl-10 w-full px-4 py-2   focus:outline-none focus:border-indigo-500"
         placeholder="Search..."
       />
     </div>
