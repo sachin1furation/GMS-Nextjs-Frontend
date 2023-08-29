@@ -4,6 +4,7 @@ import { downloadIcon, editIcon, listIcon, pritnerIcon, slashIcon } from '@/publ
 import { exportToExcel } from '@/utils/ExportTable/ExportTable'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { FaSearch } from 'react-icons/fa'
 interface Data {
     covers: number;
     name: string;
@@ -18,6 +19,7 @@ interface Data {
     time: string;
 }
 const RedervationTableOprations = () => {
+    const [searchInput, SetSearchInput] = useState<string>("")
 
     const selectionOption = ['All', 'Today']
 
@@ -84,6 +86,16 @@ const RedervationTableOprations = () => {
             console.error('Error exporting to Excel:', error);
         }
     };
+
+
+    const handelSearchInput = (e) => {
+        e.preventDefault()
+        SetSearchInput(e.target.value)
+    }
+    console.log("search", searchInput)
+
+
+
     return (
         <div>
             <div className=' flex p-3 justify-between  bg-gray-100   '>
@@ -125,7 +137,18 @@ const RedervationTableOprations = () => {
 
             <div className='border-b justify-between flex bg-white border-gray-200  w-full min-h-[40px]   '>
                 <div className='  flex border-r border-gray-200'>
-                    <div><GMSSearchInput />
+                    <div> <div className="relative">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <FaSearch className="w-5 h-5 text-gray-400" />
+                        </div>
+                        <input
+                            type="text"
+                            className="pl-10 w-full px-4 py-2   focus:outline-none focus:border-indigo-500"
+                            placeholder="Search...."
+                            value={searchInput}
+                            onChange={handelSearchInput}
+                        />
+                    </div>
                     </div>
                     <div  >
                         <select
