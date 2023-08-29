@@ -7,8 +7,10 @@ import Image from "next/image";
 
 const GMSDatePicker: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date()); // Set the default value to the current date
-
+  console.log("selectedDate", selectedDate);
   useEffect(() => {
+    console.log("selectedDate", selectedDate);
+
     // You can add additional logic here if needed
   }, []);
 
@@ -26,12 +28,10 @@ const GMSDatePicker: React.FC = () => {
 
   return (
     <div className="w-64">
-      <div
-        onChange={(date) => setSelectedDate(date)}
-        className="flex border-2 border-gray bg-white rounded-lg pr-2 "
-      >
+      <div className="flex border-2 border-gray bg-white rounded-lg pr-2 ">
         <div>
           <DatePicker
+            onChange={(date) => setSelectedDate(date)}
             selected={selectedDate}
             highlightDates={[new Date()]} // Highlight the current date
             calendarClassName="w-full"

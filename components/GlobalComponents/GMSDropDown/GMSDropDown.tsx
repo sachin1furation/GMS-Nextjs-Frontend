@@ -1,10 +1,9 @@
 'use client'
 import React, { useState } from 'react';
- import {ThreeDots} from "../../../public/assests/index"
+import { ThreeDots } from "../../../public/assests/index"
 import Image from 'next/image';
 
 const GMSDropDown: React.FC = () => {
-    console.log("thre",ThreeDots)
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -20,7 +19,7 @@ const GMSDropDown: React.FC = () => {
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
-         <Image width={20} height={20} src={ThreeDots} alt="icon" />
+        <Image width={20} height={20} src={ThreeDots} alt="icon" />
 
         {/* <svg
           className={`-mr-1 ml-2 h-5 w-5 ${isOpen ? 'transform rotate-180' : ''}`}
