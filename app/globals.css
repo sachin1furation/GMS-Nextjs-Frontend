@@ -12,7 +12,13 @@
   color: #7C4EF1;
 }
 
+.theme_color{
+  background: #2F1869;
+}
 
+.light_grey{
+  color: #858E96;
+}
 
 /* :root {
   --foreground-rgb: 0, 0, 0;

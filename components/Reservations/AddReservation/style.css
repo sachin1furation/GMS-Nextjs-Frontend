@@ -2,3 +2,17 @@
     background-color: #DEE2E6;
     color: #212529;
 }
+
+.timing_div{
+    background-color: #F1F3F5;
+}
+
+.grey_text{
+    color: #858E96;
+}
+
+.btn_gradient{
+    color: transparent; 
+    background-clip: text;
+  background-image: linear-gradient(to right, #3A36DB, #7C4EF1);
+}
