@@ -15,10 +15,11 @@ const GMSInput = ({ label, type }: InputProps) => {
         {label}
       </label>
       <input
+        style={{ borderColor: "#CED4DA" }}
         type={type}
         id="custom-input"
         name="custom-input"
-        className="w-full px-4 py-2 border-2 h-9 border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
+        className="w-full px-4 py-2 border h-9 border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-700"
         placeholder="Enter your text"
       />
     </div>
