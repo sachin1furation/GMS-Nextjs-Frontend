@@ -1,6 +1,7 @@
+import { GMSSelectInputProps } from "@/types/globalComponentTypes";
 import React from "react";
 
-const GMSSelectInput = ({
+const GMSSelectInput: React.FC<GMSSelectInputProps> = ({
   options = [1, 2, 3, 4],
   label = "Number",
   name = "select-number",

@@ -1,6 +1,5 @@
- 
- import GMSDropDown from "./GlobalComponents/GMSDropDown/GMSDropDown"
-import GMSDatePicker from  "./GlobalComponents/GMSDatePicker/GMSDatePicker"
+import GMSDropDown from "./GlobalComponents/GMSDropDown/GMSDropDown";
+import GMSDatePicker from "./GlobalComponents/GMSDatePicker/GMSDatePicker";
 import GMSButton from "./GlobalComponents/GMSButton/GMSButton";
 import GMSInput from "./GlobalComponents/GMSInput/GMSInput";
 import Calender from "./GlobalComponents/Calender/Calender";
@@ -16,6 +15,7 @@ import ClientSection from "./Reservations/AddReservation/ClientSection";
 import SourceSection from "./Reservations/AddReservation/SourceSection";
 import AdditionalInfoSection from "./Reservations/AddReservation/AdditionalInfoSection";
 import PopupCard from "./Reservations/AddReservation/PopupCard";
+import AddNewClientForm from "./Reservations/AddReservation/AddNewClientForm";
 
 export {
   GMSButton,
@@ -29,14 +29,11 @@ export {
   GuestListTable,
   TableInputEdit,
   AddReservation,
-
   ClientSection,
   SourceSection,
   AdditionalInfoSection,
   PopupCard,
-
   GMSDropDown,
-    GMSDatePicker
-
+  GMSDatePicker,
+  AddNewClientForm,
 };
- 
