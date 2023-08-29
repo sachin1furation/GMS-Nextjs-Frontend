@@ -27,3 +27,15 @@
     background-image: linear-gradient(to right, #3A36DB, #7C4EF1);
     color: white;
 }
+
+.form_sideStats{
+    color: #495057;
+}
+
+.sideStats_bg{
+    background-color: #F1F3F5;
+}
+
+.picker_border{
+    border: 1px solid grey;
+}

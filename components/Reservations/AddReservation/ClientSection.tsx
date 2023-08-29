@@ -12,7 +12,7 @@ const ClientSection: React.FC = () => {
   return (
     <>
       <div className="font-Lato">
-        {/* <div className="px-3 py-3 font-Lato">
+        <div className="px-3 py-3 font-Lato">
           <label className="text-xs">Name, Email, Phone</label>
           <div className="flex border border-gray-300 rounded-md">
             <input type="text" className="flex-1 h-9" />
@@ -24,7 +24,7 @@ const ClientSection: React.FC = () => {
               Add as New Client
             </button>
           </div>
-        </div> */}
+        </div>
 
         {client === "" && (
           <p className="text-xs text-center grey_text py-2">
@@ -32,7 +32,7 @@ const ClientSection: React.FC = () => {
           </p>
         )}
 
-        {/* {client !== "" && <PopupCard />} */}
+        {client !== "" && <PopupCard />}
         <AddNewClientForm />
       </div>
     </>
