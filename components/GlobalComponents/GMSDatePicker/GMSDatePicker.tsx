@@ -7,8 +7,10 @@ import Image from 'next/image';
 
 const GMSDatePicker: React.FC = () => {
     const [selectedDate, setSelectedDate] = useState<Date | null>(new Date()); // Set the default value to the current date
-
+    console.log("selectedDate", selectedDate)
     useEffect(() => {
+        console.log("selectedDate", selectedDate)
+
         // You can add additional logic here if needed
     }, []);
 

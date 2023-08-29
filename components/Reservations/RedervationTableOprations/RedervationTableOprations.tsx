@@ -5,6 +5,7 @@ import { exportToExcel } from '@/utils/ExportTable/ExportTable'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
+import ReservationCoverFlow from '../ReservationCoverFlow/ReservationCoverFlow'
 interface Data {
     covers: number;
     name: string;
@@ -24,6 +25,19 @@ const RedervationTableOprations = () => {
     const selectionOption = ['All', 'Today']
 
     const ShiftTimeing = ['Dinner', 'Prive']
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+
+
     const data: Data[] = [
         {
             time: "7:00",
@@ -116,14 +130,21 @@ const RedervationTableOprations = () => {
                             ))}
                         </select>
                     </div>
-                    <div className="border-2 border-gray flex gap-2 text-[14px] text-gray-700 bg-white font-medium text-lg leading-[19.36px] px-5   min-w-[15px]    h-[40px] rounded-md  hover:shadow-lg  font-inter"
-                    >
+                    <div className="border-2 border-gray flex gap-2 text-[14px] text-gray-700 bg-white font-medium text-lg leading-[19.36px] px-5   min-w-[15px]    h-[40px] rounded-md  hover:shadow-lg  font-inter">
+
                         <Image src={listIcon} width={18} height={18} alt="" />
 
-                        <button
-                        >
-                            Cover Flow
-                        </button></div>
+                        <button onClick={openModal}>Cover Flow</button>
+
+
+
+
+                        <div>
+
+                            <ReservationCoverFlow isOpen={isModalOpen} onClose={closeModal} />
+                        </div>
+
+                    </div>
                 </div>
 
                 <div className='flex gap-3'>
