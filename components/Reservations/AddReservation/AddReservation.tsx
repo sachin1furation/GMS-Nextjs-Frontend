@@ -97,7 +97,7 @@ const AddReservation = () => {
               <div className="px-3">
                 <div className="grid grid-cols-4 grid-flow-row gap-4">
                   <div>
-                    <GMSInput label="Date" type="date" />
+                    <GMSInput label="Date" type="date" id="date" />
                   </div>
                 </div>
 
@@ -121,13 +121,23 @@ const AddReservation = () => {
 
                 <div className="pt-4 grid grid-cols-3 grid-flow-row gap-4">
                   <div>
-                    <GMSSelectInput label="Shift" />
+                    <GMSSelectInput
+                      label="Shift"
+                      name="shift"
+                      options={[1, 2]}
+                      value={"abc"}
+                    />
                   </div>
                   <div>
-                    <GMSInput label="Duration" type="number" />
+                    <GMSInput label="Duration" type="number" id="duration" />
                   </div>
                   <div>
-                    <GMSSelectInput />
+                    <GMSSelectInput
+                      label="Seating Area"
+                      name="seating_area"
+                      options={[1, 2]}
+                      value={"abc"}
+                    />
                   </div>
                 </div>
 
