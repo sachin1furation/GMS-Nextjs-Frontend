@@ -1,11 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import "./style.css";
 import { GMSInput, GMSSelectInput } from "@/components";
 import {
   GMSInputProps,
   GMSSelectInputProps,
 } from "@/types/globalComponentTypes";
-
+import Datepicker from "react-tailwindcss-datepicker";
 // interface BasicDetailsItem {
 //   component: React.FC<any>;
 //   props: GMSInputProps | GMSSelectInputProps;
@@ -61,6 +63,16 @@ const AddNewClientForm: React.FC = () => {
   //       colspan: 1.5,
   //     },
   //   ];
+
+  const [value, setValue] = useState({
+    startDate: null,
+    endDate: null,
+  });
+
+  const handleValueChange = (newValue) => {
+    console.log("newValue:", newValue);
+    setValue(newValue);
+  };
 
   const sideStats = [
     { name: "Net Spend", value: "---" },
@@ -153,13 +165,67 @@ const AddNewClientForm: React.FC = () => {
             </div>
           </div>
 
-          <div className="w-1/4 bg-gray-300 flex flex-col p-3 justify-between border-0 rounded-sm">
+          <div className="w-1/4  flex flex-col p-3 justify-between border-0 rounded-sm sideStats_bg">
             {sideStats.map((stat, index) => (
-              <div className="">
-                <p className="uppercase text-xs">{stat.name}</p>
-                <p className="uppercase text-xs">{stat.value}</p>
+              <div key={index} className="">
+                <p className="uppercase text-xs form_sideStats">{stat.name}</p>
+                <p className="uppercase text-xs form_sideStats">{stat.value}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-base font-semibold py-2">Personal</p>
+          <div className="py-2">
+            <div className=" grid grid-cols-3 gap-1">
+              <GMSInput id="street" label="Street" type="text" />
+              <GMSInput id="title" label="Title (Position)" type="text" />
+              <div className="flex items-center justify-center gap-5">
+                <div className="flex items-center gap-4">
+                  <div id="genderDiv">
+                    <input
+                      id="male"
+                      className="peer/male"
+                      type="radio"
+                      name="gender"
+                      checked
+                    />
+                    <label
+                      htmlFor="male"
+                      className="peer-checked/male:text-sky-500"
+                    >
+                      Male
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="female"
+                      className="peer/female"
+                      type="radio"
+                      name="gender"
+                    />
+                    <label
+                      htmlFor="female"
+                      className="peer-checked/female:text-sky-500"
+                    >
+                      Female
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <Datepicker
+                  useRange={false}
+                  asSingle={true}
+                  value={value}
+                  onChange={handleValueChange}
+                  containerClassName={`picker_border`}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
