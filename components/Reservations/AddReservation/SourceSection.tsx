@@ -1,6 +1,6 @@
 "use client";
 
-import { GMSInput, PopupCard } from "@/components";
+import { AddNewSource, GMSInput, PopupCard } from "@/components";
 import React, { useState } from "react";
 
 const SourceSection: React.FC = () => {
@@ -30,6 +30,7 @@ const SourceSection: React.FC = () => {
       )}
 
       {source !== "" && <PopupCard />}
+      <AddNewSource />
     </>
   );
 };

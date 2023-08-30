@@ -1,20 +1,7 @@
-"use client";
+import { GMSInput, GMSSelectInput } from "@/components";
+import React from "react";
 
-import React, { useState } from "react";
-import "./style.css";
-import { GMSDatePicker, GMSInput, GMSSelectInput } from "@/components";
-import {
-  GMSInputProps,
-  GMSSelectInputProps,
-} from "@/types/globalComponentTypes";
-import Datepicker from "react-tailwindcss-datepicker";
-// interface BasicDetailsItem {
-//   component: React.FC<any>;
-//   props: GMSInputProps | GMSSelectInputProps;
-//   colspan: number;
-// }
-
-const AddNewClientForm: React.FC = () => {
+const AddNewSource = () => {
   const sideStats = [
     { name: "Net Spend", value: "---" },
     { name: "Visits", value: "---" },
@@ -196,4 +183,4 @@ const AddNewClientForm: React.FC = () => {
   );
 };
 
-export default AddNewClientForm;
+export default AddNewSource;
