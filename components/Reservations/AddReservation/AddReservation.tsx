@@ -75,7 +75,7 @@ const AddReservation = () => {
       <button onClick={() => setModalOpen(true)}>Open Modal</button>
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 font-Lato">
-          <div className="fixed inset-0 bg-gray-800 opacity-50"></div>
+          <div className="fixed inset-0 bg-gray-200 opacity-50"></div>
           <div className="bg-white w-1/2 relative max-h-full overflow-y-auto">
             <div className="py-3 px-3 theme_color flex justify-between">
               <p className=" text-white">ADD RESERVATION</p>

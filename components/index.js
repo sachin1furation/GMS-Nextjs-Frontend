@@ -16,6 +16,7 @@ import SourceSection from "./Reservations/AddReservation/SourceSection";
 import AdditionalInfoSection from "./Reservations/AddReservation/AdditionalInfoSection";
 import PopupCard from "./Reservations/AddReservation/PopupCard";
 import AddNewClientForm from "./Reservations/AddReservation/AddNewClientForm";
+import AddNewSource from "./Reservations/AddReservation/AddNewSource";
 
 export {
   GMSButton,
@@ -36,4 +37,5 @@ export {
   GMSDropDown,
   GMSDatePicker,
   AddNewClientForm,
+  AddNewSource,
 };
