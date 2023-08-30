@@ -1,6 +1,6 @@
 import React from "react";
 
-const PopupCard: React.FC = () => {
+const PopupCard: React.FC = ({ data }: any) => {
   return (
     <>
       <div className="p-3">
